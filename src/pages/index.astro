@@ -1,0 +1,157 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Steps from '~/components/widgets/Steps.astro';
+
+const metadata = {
+  title: 'Tyler Ross',
+};
+---
+
+<Layout metadata={metadata}>
+
+  <Content
+    id="about"
+    columns={1}
+    items={[
+      // {
+      //   icon: 'tabler:brand-github',
+      //   callToAction: {
+      //     target: '_blank',
+      //     text: 'Github',
+      //     href: 'https://github.com/TDRoss',
+      //   },
+      // },
+      {
+        icon: 'tabler:mail',
+        callToAction: {
+          target: '_blank',
+          text: 'Email',
+          href: 'mailto:tross@mit.edu',
+        },
+      },
+    ]}
+    image={{
+      src: 'src/assets/images/croppedTyler.JPG',
+      alt: 'Colorful Image',
+      loading: 'eager',
+    }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Tyler Ross</h2>
+      <p>
+        I'm a researcher who is excited to develop generative AI that is capable of solving math/physics problems and formulating new hypotheses. My background, which has spanned from quantum information theory to experimental protein engineering, has provided me with the skills to quickly adapt to new fields of research and solve scientific problems.  
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+
+
+  <Steps
+    id="resume"
+    title="Experience"
+    items={[
+      {
+        title:
+          'Physics of Living Systems Fellow <br /> <span class="font-normal">MIT, Cambridge, MA</span> <br /> <span class="text-sm font-normal">2023 - Present</span>',
+        description: `My primary focus is on developing methods for generative large language models (LLMs) to analyze and design DNA sequences for forming nanostructures.
+        I have shown that general purpose LLMs, like ChatGPT, are able to capture the physical rules that govern secondary structure formation (i.e. structures beyond the familiar double helix).
+         Additionally, I am managing projects on motor-propelled DNA structures and self-propelled condensates.`,
+        icon: 'src/assets/images/mit_logo_std_rgb_mit-red.png',
+      },
+      {
+        title:
+          'Postdoctoral Scholar <br /> <span class="font-normal">Caltech, Pasadena, CA</span> <br /> <span class="text-sm font-normal">2020 - 2023</span>',
+        description: `I developed a theory and simulations that predict that self-propelled microscopic objects can be organized by 
+        friction patches in a similar manner to how light is modulated by lenses and prisms. 
+        I also developed an experimental system for controlling the motion of DNA structures propelled by engineered motor proteins.
+        Both projects are advancements in creating self-contained devices for routing molecular cargo in diagnostic applications and 
+        in developing autonomous cell-sized machines.`,
+        icon: 'src/assets/images/caltech_logo.png',
+        video: 'src/assets/videos/prism_swim1.m4v'
+      },
+      {
+        title:
+          'PhD in Biology <br /> <span class="font-normal">Caltech, Pasadena, CA</span> <br /> <span class="text-sm font-normal">2014 - 2020</span>',
+        description: `For my thesis I engineered a biomolecular system that allows for the light-controlled organization of motor proteins and the filamentous tracks they walk on.
+        This work is a step toward establishing the guiding principles for creating cell-sized machines that can be programmed to perform mechanical tasks.`,
+        icon: 'src/assets/images/caltech_logo.png',
+        video: 'src/assets/videos/aster dance.mp4'
+      },
+      {
+        title:
+          'Biostatistician <br /> <span class="font-normal">Yale, New Haven, CT</span> <br /> <span class="text-sm font-normal">2010 - 2014</span>',
+        description: `I developed image analysis tools for fluorescent cell microscopy and gained expertise in microscopy experiments along the way. 
+        This entailed developing robust methods for determining cell orientation, segmenting cellular structures, and quantifying ratios of fluorescence signals.
+        My analysis was largely used in determining the relationship between mechanical forces (e.g. stretching and fluid shear stress) and cellular biochemical responses, otherwise known as mechanotransduction.
+        Mechanostransduction is important in stem cell differentiation, cancer metastasis, and cardiovascular diseases`,
+        image: 'src/assets/images/aligned_cells.jpg',
+        icon: 'src/assets/images/yale-white.png',
+      },
+      {
+        title:
+          'BS in Physics <br /> <span class="font-normal">University of Virginia, Charlottesville, VA</span> <br /> <span class="text-sm font-normal">2006 - 2010</span>',
+        description: `I worked on a theoretical photon entanglement scheme for quantum information applications at the University of Cambridge.
+        For my second major in Engineering Science, I developed a program for segmenting cell microscopy images as part of a project for quantifying molecular tension.`,
+        icon: 'src/assets/images/university-of-virginia-logo-png-transparent.png',
+      },
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+
+
+  <Features3
+    title="Publications"
+    columns={1}
+    defaultIcon="tabler:point-filled"
+    items={[
+      { title:`Chaining thoughts and LLMs to learn DNA structural biophysics`,
+        description: 'arXiv, (2024). <a href="https://doi.org/10.48550/ARXIV.2403.01332" target="_blank" rel="noopener noreferrer">[PDF link]</a> <br /> <strong>T. D. Ross</strong> and A. Gopinath',
+      },
+      { title: `Spatiotemporal patterning of extensile active stresses in microtubule-based active fluids`,
+        description: 'PNAS Nexus, pgad130 (2023). <a href="https://doi.org/10.1093/pnasnexus/pgad130" target="_blank" rel="noopener noreferrer">[PDF link]</a> <br />L. M. Lemma, M. Varghese, <strong>T. D. Ross</strong>, M. Thomson, A. Baskaran, Z. Dogic',
+      },
+      {
+        title: 'Motor processivity and speed determine structure and dynamics of microtubule-motor assemblies',
+        description: 'eLife, 12, e79402 (2023). <a href="https://doi.org/10.7554/eLife.79402" target="_blank" rel="noopener noreferrer">[PDF link]</a>  <br /> R. A. Banks, V. Galstyan, H. J. Lee, S. Hirokawa, A. Ierokomos, <strong>T. D. Ross</strong>, Z. Bryant, M. Thomson, R. Phillips',
+      },
+      { title: `Ray Optics for Gliders`,
+        description: 'ACS Nano, 16, 16191–16200 (2022). <a href="https://arxiv.org/pdf/2109.06360" target="_blank" rel="noopener noreferrer">[PDF link]</a>   <br /> <strong>T. D. Ross</strong>, D. Osmanović, J. F. Brady, P. W. K. Rothemund',
+      },
+      {
+        title:`Controlling Organization and Forces in Active Matter Through Optically Defined Boundaries`,
+        description: `Nature, 572, 224-229 (2019). <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6719720/" target="_blank" rel="noopener noreferrer">[PDF link]</a> <br /> <strong>T. D. Ross</strong>, H. J. Lee, Z. Qu, R. A. Banks, R. Phillips, M. Thomson <img src=src/assets/images/Nature-cover-large.jpg alt="Nature cover" class="item-image" style="width: 400px; height: auto;" />`
+      },
+      {
+        title: 'Defective fluid shear stress mechanotransduction mediates hereditary hemorrhagic telangiectasia',
+        description: 'Journal of Cell Biology, 214 (7), 807-816 (2016). <a href="https://doi.org/10.1083/jcb.201603106" target="_blank" rel="noopener noreferrer">[PDF link]</a> <br /> N. Baeyens, B. Larrivée, R. Ola, B. Hayward-Piatkowskyi, A. Dubrac, B. Huang, <strong>T. D. Ross</strong>, B. G. Coon, E. Min, M. Tsarfati, H. Tong, A. Eichmann, M. A. Schwartz' ,
+      },
+      {
+        title: 'Color Intramembrane binding of VE-cadherin to VEGFR2 and VEGFR3 assembles the endothelial mechanosensory complex',
+        description: 'Journal of Cell Biology 208 (7), 975-986 (2015). <a href="https://doi.org/10.1083/jcb.201408103" target="_blank" rel="noopener noreferrer">[PDF link]</a> <br /> B. G. Coon, N. Baeyens, J. Han, M. Budatha, <strong>T. D. Ross</strong>, J. S. Fang, S. Yun, J. L. Thomas, M. A. Schwartz',
+      },
+      {
+        title: 'Vascular remodeling is governed by a VEGFR3-dependent fluid shear stress set point',
+        description: 'eLife 4, e04645 (2015). <a href="https://doi.org/10.7554/eLife.04645" target="_blank" rel="noopener noreferrer">[PDF link]</a> <br /> N. Baeyens, S. Nicoli, B. G. Coon, <strong>T. D. Ross</strong>, K. Van den Dries, J. Han, H, M. Lauridsen, C. O. Mejean, A. Eichmann, J. L. Thomas, J. D. Humphrey, M. A. Schwartz',
+      },
+      {
+        title: 'Syndecan 4 is required for endothelial alignment in flow and atheroprotective signaling',
+        description: 'Proceedings of the National Academy of Sciences 111 (48), 17308-17313 (2014). <a href="https://doi.org/10.1073/pnas.1413725111" target="_blank" rel="noopener noreferrer">[PDF link]</a> <br /> N. Baeyens, M. J. Mulligan-Kehoe, F. Corti, D. D. Simon, <strong>T. D. Ross</strong>, J. M. Rhodes, T. Z. Wang, C. O. Mejean, M. Simons, J. Humphrey, M. A. Schwartz',
+      },
+      {
+        title: 'Chemokine-coupled β2 integrin–induced macrophage Rac2–Myosin IIA interaction regulates VEGF-A mRNA stability and arteriogenesis',
+        description: 'Journal of Experimental Medicine 211 (10), 1957-1968 (2014). <a href="https://doi.org/10.1084/jem.20132130" target="_blank" rel="noopener noreferrer">[PDF link]</a> <br /> A. R. Morrison, T. O. Yarovinsky, B. D. Young, F. Moraes, <strong>T. D. Ross</strong>, N. Ceneri, J. Zhang, Z. W. Zhuang, A. J. Sinusas, R. Pardi, M. A. Schwartz, M. Simons, J. R. Bender',
+      },
+      {
+        title: 'Integrins in mechanotransduction',
+        description: 'Current Opinion in Cell Biology 25 (7), 613-618 (2013). <a href="https://doi.org/10.1016%2Fj.ceb.2013.05.006" target="_blank" rel="noopener noreferrer">[PDF link]</a> <br /> <strong>T. D. Ross</strong>, B. G. Coon, S. Yun, N. Baeyens, K. Tanaka, M. Ouyang, M. A Schwartz',
+      },
+    ]}
+  />
+
+</Layout>
