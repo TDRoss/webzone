@@ -25,8 +25,8 @@ const whenExternalScripts = (items = []) =>
     : [];
 
 export default defineConfig({
-  site: SITE.site,
-  base: SITE.base,
+  site: 'https://tdross.github.io',
+  base: '/webzone',
   trailingSlash: SITE.trailingSlash ? 'always' : 'never',
 
   output: 'static',
