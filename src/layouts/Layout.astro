@@ -17,9 +17,9 @@ import BasicScripts from '~/components/common/BasicScripts.astro';
 
 import type { MetaData as MetaDataType } from '~/types';
 
-export interface Props {
-  metadata?: MetaDataType;
-}
+// export interface Props {
+//   metadata?: MetaDataType;
+// }
 
 const { metadata = {} } = Astro.props;
 const { language, textDirection } = I18N;
@@ -29,7 +29,7 @@ const { language, textDirection } = I18N;
 <html lang={language} dir={textDirection} class="2xl:text-[20px]">
   <head>
     <CommonMeta />
-    <Favicons />
+    <!-- <Favicons /> -->
     <CustomStyles />
     <ApplyColorMode />
     <Metadata {...metadata} />
